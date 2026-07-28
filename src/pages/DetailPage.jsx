@@ -21,7 +21,7 @@ export default function DetailPage() {
     setLoading(true)
 
     axios
-      .get(`http://localhost:3000/api/products/${slug}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/products/${slug}`)
       .then((res) => {
         setProduct(res.data)
         console.log(res.data);

@@ -26,7 +26,7 @@ export default function Products() {
     setSearchParams({ searchValue, filter })
 
     axios
-      .get(`http://localhost:3000/api/products?searchValue=${searchValue}&filter=${filter}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/products?searchValue=${searchValue}&filter=${filter}`)
       .then((res) => setTodos(res.data))
       .finally(() => setTimeout(setLoading(false), 1000))
   }

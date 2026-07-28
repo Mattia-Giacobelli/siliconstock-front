@@ -31,7 +31,7 @@ export default function Cart() {
       localDiscountId = 3
     }
 
-    await axios.get(`http://localhost:3000/api/orders/discount-code?id=${localDiscountId}`)
+    await axios.get(`http://localhost:8080/api/orders/discount-code?id=${localDiscountId}`)
       .then(res => {
         console.log(res.data[0].discount_value);
         console.log(res.data);

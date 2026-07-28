@@ -10,7 +10,7 @@ export default function SingleCard({ todo }) {
       <div className="card card_hover h-100">
         <div>
           <img
-            src={`http://localhost:3000/${todo.img}`}
+            src={`${import.meta.env.VITE_API_URL}/${todo.img}`}
             className="card-img-top"
             alt={todo.name}
           />

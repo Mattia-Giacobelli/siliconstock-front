@@ -27,7 +27,7 @@ export default function Home() {
 
     Promise.all(
       categories.map((c) =>
-        axios.get(`http://localhost:3000/api/products/category/${c}`),
+        axios.get(`${import.meta.env.VITE_API_URL}/api/products/category/${c}`),
       ),
     )
       /* mostra il primo prodotto di ogni categoria "prodotti in evidenza" */
