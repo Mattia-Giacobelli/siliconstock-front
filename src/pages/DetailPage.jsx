@@ -70,7 +70,7 @@ export default function DetailPage() {
 
           <div className="card flex-row detail-card">
             <div className="detail-image">
-              <img src={`http://localhost:3000/${product.img}`} alt="product image" />
+              <img src={`${import.meta.env.VITE_API_URL}/${product.img}`} alt="product image" />
             </div>
             <div className="d-flex flex-column justify-content-around details">
               <h5 className="title">{product.product_name}</h5>

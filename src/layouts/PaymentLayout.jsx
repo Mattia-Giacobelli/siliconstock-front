@@ -25,7 +25,7 @@ export default function PaymentLayout() {
         if (!cart.length) return;
 
         // Create PaymentIntent as soon as the page loads
-        fetch("http://localhost:3000/api/orders/create-payment-intent", {
+        fetch(`${import.meta.env.VITE_API_URL}/api/orders/create-payment-intent`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ products: cart }),

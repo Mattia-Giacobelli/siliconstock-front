@@ -86,7 +86,7 @@ export default function CompletePage() {
   useEffect(() => {
     console.log(order);
 
-    axios.post('http://localhost:3000/api/orders/send-email', { order })
+    axios.post(`${import.meta.env.VITE_API_URL}/api/orders/send-email`, { order })
       .then(res => console.log('email sent'))
       .catch(err => console.log(err))
       .finally(() => {
@@ -141,7 +141,7 @@ export default function CompletePage() {
 
 
                 <div className="me-5 cart-image">
-                  <img src={`http://localhost:3000/${product.img}`} alt="" height={100} />
+                  <img src={`${import.meta.env.VITE_API_URL}/${product.img}`} alt="" height={100} />
                 </div>
 
                 <div>

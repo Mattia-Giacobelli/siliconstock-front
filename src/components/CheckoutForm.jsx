@@ -36,7 +36,7 @@ export default function CheckoutForm() {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "http://localhost:5173/complete",
+        return_url: "https://siliconstock-front.giacobelli-mattia12.workers.dev/complete",
       },
     });
 
@@ -78,7 +78,7 @@ export default function CheckoutForm() {
 
   function saveOrder(order) {
     setOrder(order)
-    axios.post('http://localhost:3000/api/orders/newOrder', { order })
+    axios.post(`${import.meta.env.VITE_API_URL}/api/orders/newOrder`, { order })
       .then(res => {
         console.log(res.data)
         console.log(res.data.status);
@@ -131,7 +131,7 @@ export default function CheckoutForm() {
     let newOrder
 
     if (discountCodeId !== 0) {
-      await axios.get(`http://localhost:3000/api/orders/discount-code?id=${discountCodeId}`)
+      await axios.get(`${import.meta.env.VITE_API_URL}/api/orders/discount-code?id=${discountCodeId}`)
         .then(res => {
           console.log(res.data);
           setDiscountValue(res.data)
@@ -266,7 +266,7 @@ export default function CheckoutForm() {
 
 
                   <div className="me-5 cart-image">
-                    <img src={`http://localhost:3000/${product.img}`} alt="" height={100} />
+                    <img src={`${import.meta.env.VITE_API_URL}/${product.img}`} alt="" height={100} />
                   </div>
 
                   <div>

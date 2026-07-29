@@ -31,7 +31,7 @@ export default function Cart() {
       localDiscountId = 3
     }
 
-    await axios.get(`http://localhost:8080/api/orders/discount-code?id=${localDiscountId}`)
+    await axios.get(`${import.meta.env.VITE_API_URL}/api/orders/discount-code?id=${localDiscountId}`)
       .then(res => {
         console.log(res.data[0].discount_value);
         console.log(res.data);
@@ -76,7 +76,7 @@ export default function Cart() {
               <div id="cart-section" className="flex-grow-1 d-flex justify-content-between col-sm-12 col-md-4">
                 <div className="me-5 mb-3 cart-image">
                   <img
-                    src={`http://localhost:3000/${product.img}`}
+                    src={`${import.meta.env.VITE_API_URL}/${product.img}`}
                     alt=""
                   />
                 </div>
