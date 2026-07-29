@@ -906,6 +906,14 @@ main {
     right: calc(50vw - 95px);
     z-index: 2;
   }
+
+  .portfolio {
+
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+
+  }
 }
 
 /*       color: white;

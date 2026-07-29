@@ -30,7 +30,6 @@ export default function Navbar() {
                 <Link to="/" className="navbar-logo">
                     <img src="/content.png" alt="Logo" className="navbar-logo-img" />
                 </Link>
-                <Link to={"https://portfolio-supabase.giacobelli-mattia12.workers.dev"}>Portfolio</Link>
                 <Link to="/" className="navbar-link">Home</Link>
             </div>
 

@@ -10,6 +10,8 @@ export default function DefaultLayout() {
 
                 <Outlet />
 
+                <Link className="portfolio btn btn-outline-info" to={"https://portfolio-supabase.giacobelli-mattia12.workers.dev/projects/4"}>Portfolio</Link>
+
             </main>
             <Footer />
         </div>
