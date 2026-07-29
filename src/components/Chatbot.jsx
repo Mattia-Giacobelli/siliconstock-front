@@ -12,7 +12,7 @@ export default function Chatbot({ products }) {
   const [chatLoader, setChatLoader] = useState(false);
 
   async function getResponse() {
-    const response = await fetch("http://localhost:3000/api/chat", {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/chat`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: message }),
@@ -73,15 +73,13 @@ export default function Chatbot({ products }) {
                 messages.map((msg, idx) => (
                   <div
                     key={idx}
-                    className={`chat-bubble ${
-                      msg.author === "user" ? "user" : "ai"
-                    }`}
+                    className={`chat-bubble ${msg.author === "user" ? "user" : "ai"
+                      }`}
                   >
                     <div className="chat-meta">
                       <span
-                        className={`chat-author ${
-                          msg.author === "user" ? "user" : "ai"
-                        }`}
+                        className={`chat-author ${msg.author === "user" ? "user" : "ai"
+                          }`}
                       >
                         {msg.author === "user" ? "Tu" : "FABRIZIO"}
                       </span>
