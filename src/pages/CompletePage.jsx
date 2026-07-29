@@ -55,7 +55,7 @@ export default function CompletePage() {
   const { order } = useCart()
   const [orderData, setOrderData] = useState()
 
-  const { cart } = useCart();
+  const { cart, setCart } = useCart();
 
   useEffect(() => {
     if (!stripe) {
@@ -92,6 +92,9 @@ export default function CompletePage() {
       .finally(() => {
         setOrderData(order)
       })
+
+    setCart([])
+    localStorage.setItem("cart", JSON.stringify([]))
   }, [order])
 
 
