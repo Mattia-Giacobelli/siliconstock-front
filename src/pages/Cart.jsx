@@ -33,10 +33,10 @@ export default function Cart() {
 
     await axios.get(`${import.meta.env.VITE_API_URL}/api/orders/discount-code?id=${localDiscountId}`)
       .then(res => {
-        console.log(res.data[0].discount_value);
+        console.log(res.data.discount_value);
         console.log(res.data);
 
-        setDiscountValue(res.data[0].discount_value)
+        setDiscountValue(res.data.discount_value)
 
       })
 
