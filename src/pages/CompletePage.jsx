@@ -4,6 +4,7 @@ import {
 } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { useCart } from "../contexts/CartContext";
+import { Link } from "react-router";
 
 
 const SuccessIcon =
@@ -57,6 +58,13 @@ export default function CompletePage() {
 
   const { cart, setCart } = useCart();
 
+  function clearCart() {
+
+    setCart([])
+    localStorage.setItem("cart", JSON.stringify([]))
+
+  }
+
   useEffect(() => {
     if (!stripe) {
       return;
@@ -92,9 +100,6 @@ export default function CompletePage() {
       .finally(() => {
         setOrderData(order)
       })
-
-    setCart([])
-    localStorage.setItem("cart", JSON.stringify([]))
   }, [order])
 
 
@@ -166,6 +171,7 @@ export default function CompletePage() {
 
             </div>
           ))}
+          <Link to={"/"} onClick={clearCart} className="text-center btn btn-primary">Torna alla home</Link>
         </div>
       </div>
     </>
