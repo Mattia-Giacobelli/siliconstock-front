@@ -145,7 +145,7 @@ export default function CheckoutForm() {
         phone,
         email,
         shipping_address,
-        total_amount: total - (total * discountValueLocal[0].discount_value / 100),
+        total_amount: total - (total * discountValueLocal.discount_value / 100),
         products: cart,
         discount_code_id: discountCodeId
       }
